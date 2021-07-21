@@ -5,8 +5,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+          Edit <code>src/App.js</code> 
         <a
           className="App-link"
           href="https://reactjs.org"
