@@ -1,7 +1,9 @@
 import React from "react"
 
+import { DashbordDiv } from "./Styles"
+
 function Dashbord() {
-  return <div>Dashbord</div>
+  return <DashbordDiv></DashbordDiv>
 }
 
 export default Dashbord
