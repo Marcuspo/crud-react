@@ -13,8 +13,12 @@ function Routes() {
     <Router history={history}>
       <Switch>
         <PrivateRoutes path={"/dashboard"} component={Dashbord} />
-        <Route path={"/"} component={Login} exact />
-        <Route component={NotFound} />
+        <Route path={"/"} exact>
+          <Login />
+        </Route>
+        <Route>
+          <NotFound />
+        </Route>
       </Switch>
     </Router>
   )

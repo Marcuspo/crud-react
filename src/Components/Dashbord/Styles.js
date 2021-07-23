@@ -24,5 +24,6 @@ export const DashbordDiv = styled.div`
     width: 86px;
     padding: 8px 0;
     background: #3a2b58;
+    cursor: pointer;
   }
 `

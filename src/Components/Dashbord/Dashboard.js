@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 import fire from "../Fire/Fire"
 
@@ -15,7 +16,9 @@ function Dashbord() {
     <DashbordDiv>
       <nav>
         <h2>Dashboard</h2>
-        <button onClick={handleLogOut}>Log-Out</button>
+        <Link to="/" onClick={handleLogOut}>
+          <button>LogOut</button>
+        </Link>
       </nav>
     </DashbordDiv>
   )
