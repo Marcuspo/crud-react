@@ -12,8 +12,8 @@ function Routes() {
   return (
     <Router history={history}>
       <Switch>
+        <PrivateRoutes path={"/dashboard"} component={Dashbord} />
         <Route path={"/"} component={Login} exact />
-        <PrivateRoutes path={"/dashboard"} component={Dashbord} exact />;
         <Route component={NotFound} />
       </Switch>
     </Router>

@@ -30,6 +30,7 @@ function Login() {
           history.push("/dashboard")
           console.log(resp.user.refreshToken)
           window.location.reload(true)
+          setUser(true)
         } else {
           window.location.reload(true)
         }
@@ -50,24 +51,6 @@ function Login() {
         }
       })
   }
-
-  function handleLogOut() {
-    fire.auth().signOut()
-  }
-
-  function authListener() {
-    fire.auth().onAuthStateChanged((user) => {
-      if (user) {
-        setUser(user)
-      } else {
-        setUser("")
-      }
-    })
-  }
-
-  useEffect(() => {
-    authListener()
-  }, [])
 
   return (
     <LoginDiv>
