@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 
 import fire from "../../Components/Fire/Fire.js"
 
@@ -14,7 +14,6 @@ import {
 } from "./Styles"
 
 function Login() {
-  const [user, setUser] = useState(false)
   const [password, setPassword] = useState("")
   const [email, setEmail] = useState("")
   const [emailError, emailUpdateError] = useState("")
@@ -30,7 +29,6 @@ function Login() {
           history.push("/dashboard")
           console.log(resp.user.refreshToken)
           window.location.reload(true)
-          setUser(true)
         } else {
           window.location.reload(true)
         }
