@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react"
 
 import fire from "../../Components/Fire/Fire.js"
 
+import STORAGE_KEY from "../Fire/Auth"
+import history from "../Routes/history"
+
 import {
   ButtonLogin,
   LoginDiv,
@@ -11,7 +14,7 @@ import {
 } from "./Styles"
 
 function Login() {
-  const [user, setUser] = useState("")
+  const [user, setUser] = useState(false)
   const [password, setPassword] = useState("")
   const [email, setEmail] = useState("")
   const [emailError, emailUpdateError] = useState("")
@@ -20,7 +23,17 @@ function Login() {
   function handleLogin() {
     fire
       .auth()
-      .signInWithEmailAndPassword(password, email)
+      .signInWithEmailAndPassword(email.trim(), password)
+      .then((resp) => {
+        if (resp) {
+          localStorage.setItem("app-token", resp.user.refreshToken)
+          history.push("/dashboard")
+          console.log(resp.user.refreshToken)
+          window.location.reload(true)
+        } else {
+          window.location.reload(true)
+        }
+      })
       .catch((err) => {
         // eslint-disable-next-line default-case
         switch (err.code) {
@@ -28,9 +41,11 @@ function Login() {
           case "auth/user-disabled":
           case "auth/user-not-found":
             emailUpdateError(err.message)
+            localStorage.setItem(STORAGE_KEY, "errou")
             break
           case "auth/wrong-password":
             passwordUpdateError(err.message)
+            localStorage.setItem(STORAGE_KEY, "errou")
             break
         }
       })
@@ -54,14 +69,13 @@ function Login() {
     authListener()
   }, [])
 
-  console.log(authListener)
-
   return (
     <LoginDiv>
       <LoginContainer>
         <label>Email:</label>
         <input
-          type="text"
+          type="email"
+          name="email"
           autoFocus
           required
           value={email}
