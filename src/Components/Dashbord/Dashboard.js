@@ -3,6 +3,8 @@ import { Link } from "react-router-dom"
 
 import fire from "../Fire/Fire"
 
+import Button from "./Button/Button"
+
 import { DashbordDiv } from "./Styles"
 
 function Dashbord() {
@@ -20,6 +22,7 @@ function Dashbord() {
           <button>LogOut</button>
         </Link>
       </nav>
+      <Button />
     </DashbordDiv>
   )
 }
