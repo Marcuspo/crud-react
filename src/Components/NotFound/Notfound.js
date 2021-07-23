@@ -1,5 +1,6 @@
 function NotFound() {
-  return <h1>Você foi longe demais, favor voltar 1 casa!</h1>
+  window.location.reload(true)
+  return <h1>Você foi longe demais, você está sendo transferi...</h1>
 }
 
 export default NotFound

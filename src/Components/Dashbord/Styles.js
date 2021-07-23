@@ -11,7 +11,6 @@ export const DashbordDiv = styled.div`
   );
   nav {
     background: #603bbb;
-    width: 100%;
     padding: 20px 40px;
     display: flex;
     align-items: center;
@@ -21,6 +20,7 @@ export const DashbordDiv = styled.div`
     color: #fff;
   }
   button {
+    color: #fff;
     width: 86px;
     padding: 8px 0;
     background: #3a2b58;
