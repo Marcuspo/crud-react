@@ -27,3 +27,29 @@ export const DashbordDiv = styled.div`
     cursor: pointer;
   }
 `
+export const CardGroup = styled.div`
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  padding: 15px;
+`
+
+export const CardSecond = styled(CardGroup)`
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  padding: 15px;
+`
+export const Buttons = styled.div`
+  display: flex;
+  width: 25%;
+  display: flex;
+  padding: 8px 0;
+  cursor: pointer;
+`

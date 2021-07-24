@@ -73,9 +73,6 @@ function Login() {
         <ErrorMsg>{passwordError}</ErrorMsg>
         <ButtonContainer>
           <ButtonLogin onClick={handleLogin}>Logar</ButtonLogin>
-          <p>
-            Não tem conta? <span>Clique aqui!</span>
-          </p>
         </ButtonContainer>
       </LoginContainer>
     </LoginDiv>
