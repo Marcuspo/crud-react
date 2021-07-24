@@ -5,6 +5,7 @@ import Login from "../Login/Login"
 import Dashbord from "../Dashbord/Dashboard"
 import NotFound from "../NotFound/Notfound"
 import Cliente from "../Dashbord/Clientes/Clientes"
+import Cadastro from "../Dashbord/Cadastro/Cadastro"
 
 import history from "./history"
 
@@ -16,6 +17,11 @@ function Routes() {
       <Switch>
         <PrivateRoutes path={"/dashboard"} component={Dashbord} exact />
         <PrivateRoutes path={"/dashboard/clientes"} component={Cliente} exact />
+        <PrivateRoutes
+          path={"/dashboard/cadsatro"}
+          component={Cadastro}
+          exact
+        />
         <Route path={"/"} exact>
           <Login />
         </Route>

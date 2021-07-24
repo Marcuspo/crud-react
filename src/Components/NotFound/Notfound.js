@@ -8,7 +8,7 @@ function NotFound() {
 
   return (
     <h1>
-      Você foi longe demais, você está sendo transferi...
+      Você está sendo transferido...
       <button onClick={GoHomeNow}>Ir para Home</button>
     </h1>
   )
