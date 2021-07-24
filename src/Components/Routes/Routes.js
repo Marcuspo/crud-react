@@ -18,7 +18,7 @@ function Routes() {
         <PrivateRoutes path={"/dashboard"} component={Dashbord} exact />
         <PrivateRoutes path={"/dashboard/clientes"} component={Cliente} exact />
         <PrivateRoutes
-          path={"/dashboard/cadsatro"}
+          path={"/dashboard/cadastro"}
           component={Cadastro}
           exact
         />

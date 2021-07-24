@@ -19,6 +19,11 @@ function Dashbord() {
     window.location.reload(true)
   }
 
+  function handleCadastro() {
+    history.push("/dashboard/cadastro")
+    window.location.reload(true)
+  }
+
   return (
     <DashbordDiv>
       <nav>
@@ -47,9 +52,7 @@ function Dashbord() {
                 Clique no botão para o cadastro de novos clientes
               </Card.Text>
               <Buttons variant="outline-primary">
-                <Link to="/dashboard/cadastro">
-                  <button>Cadastro</button>
-                </Link>
+                <button onClick={handleCadastro}>Cadastro</button>
               </Buttons>
             </Card.Body>
           </Card>

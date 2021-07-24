@@ -11,7 +11,6 @@ function Cliente() {
 
   return (
     <ClientesDiv>
-      {" "}
       <nav>
         <h2>Clientes</h2>
         <Link to="/dashboard" onClick={handleBackToDash}>
