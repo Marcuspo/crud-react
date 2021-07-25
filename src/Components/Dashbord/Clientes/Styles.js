@@ -27,3 +27,10 @@ export const ClientesDiv = styled.div`
     cursor: pointer;
   }
 `
+export const CardGroupTwo = styled.div`
+  padding: 15px;
+  flex-direction: row;
+`
+export const TextCard = styled.text`
+  display: flex;
+`
