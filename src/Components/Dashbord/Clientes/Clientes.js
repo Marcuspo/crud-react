@@ -1,11 +1,17 @@
 import { useState, useEffect } from "react"
-import { Card } from "react-bootstrap"
+import { Button, Card } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import history from "../../Routes/history"
 
 import api from "../../Services/services"
 
-import { ClientesDiv, CardGroupTwo, TextCard } from "./Styles"
+import {
+  ClientesDiv,
+  CardGroupTwo,
+  TextCard,
+  ButtonMore,
+  TextCardButton,
+} from "./Styles"
 
 function Cliente() {
   const [usuario, setUsuario] = useState([])
@@ -31,7 +37,7 @@ function Cliente() {
   return (
     <ClientesDiv>
       <nav>
-        <h2>Cadastro</h2>
+        <h2>Clientes</h2>
         <Link to="/dashboard" onClick={handleBackToDash}>
           <button>Voltar</button>
         </Link>
@@ -47,7 +53,19 @@ function Cliente() {
               <TextCard>
                 Razão social/sobrenome: {usuario.cliente.razao_social}
               </TextCard>
-              <TextCard>Tipo de pessoa:</TextCard>
+              <TextCard>
+                Tipo de pessoa:
+                {usuario.cliente.tipo_cliente ? (
+                  <b> Jurídica</b>
+                ) : (
+                  <b> Física</b>
+                )}
+              </TextCard>
+              <ButtonMore>
+                <Link to={`/dashboard/clientes/${usuario._id}`}>
+                  <TextCardButton>Acessar mais informações</TextCardButton>
+                </Link>
+              </ButtonMore>
             </Card.Body>
           </Card>
         ))}
