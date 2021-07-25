@@ -5,14 +5,7 @@ import history from "../../Routes/history"
 
 import api from "../../Services/services"
 
-import {
-  ClientesDiv,
-  CardGroupTwo,
-  TextCard,
-  ButtonMore,
-  TextCardButton,
-  Pagination,
-} from "./Styles"
+import { ClientesDiv, CardGroupTwo, TextCard, Pagination } from "./Styles"
 
 function Cliente() {
   const [usuario, setUsuario] = useState([])
@@ -78,11 +71,6 @@ function Cliente() {
                   <b> Física</b>
                 )}
               </TextCard>
-              <ButtonMore>
-                <Link to={`/dashboard/clientes/${usuario._id}`}>
-                  <TextCardButton>Acessar mais informações</TextCardButton>
-                </Link>
-              </ButtonMore>
             </Card.Body>
           </Card>
         ))}
