@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom"
+import React, { useState } from "react"
+import { Link, Redirect } from "react-router-dom"
 import history from "../../Routes/history"
+import Form from "./Form"
 
 import { CadastroDiv } from "./Styles"
 
-function Cadastro() {
+const Cadastro = () => {
   function handleBackToDash() {
     history.push("/dashboard")
     window.location.reload(true)
@@ -12,12 +14,12 @@ function Cadastro() {
   return (
     <CadastroDiv>
       <nav>
-        <h2>Clientes</h2>
+        <h2>Cadastro</h2>
         <Link to="/dashboard" onClick={handleBackToDash}>
           <button>Voltar</button>
         </Link>
       </nav>
-      Cadastro
+      <Form />
     </CadastroDiv>
   )
 }
