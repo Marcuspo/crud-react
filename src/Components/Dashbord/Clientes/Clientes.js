@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Button, Card } from "react-bootstrap"
+import { Card } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import history from "../../Routes/history"
 
@@ -11,6 +11,7 @@ import {
   TextCard,
   ButtonMore,
   TextCardButton,
+  Pagination,
 } from "./Styles"
 
 function Cliente() {
@@ -18,16 +19,32 @@ function Cliente() {
   const [page, setPage] = useState([1])
 
   useEffect(() => {
-    async function loadUsuarios(page = 1) {
-      const response = await api.get(`/usuarios/?page=${page}`)
-      const { docs } = response.data
-
-      setUsuario(docs)
-
-      setPage(page)
-    }
     loadUsuarios()
-  }, [usuario])
+  }, [])
+
+  async function loadUsuarios(page = 1) {
+    const response = await api.get(`/usuarios/?page=${page}`)
+    const { docs } = response.data
+
+    setUsuario(docs)
+    setPage(page)
+  }
+
+  async function nextPage() {
+    const response = await api.get(`/usuarios/?page=${page + 1}`)
+
+    const { docs } = response.data
+
+    setUsuario(docs)
+  }
+
+  async function previousPage() {
+    const response = await api.get(`/usuarios/?page=${page}`)
+
+    const { docs } = response.data
+
+    setUsuario(docs)
+  }
 
   function handleBackToDash() {
     history.push("/dashboard")
@@ -70,6 +87,10 @@ function Cliente() {
           </Card>
         ))}
       </CardGroupTwo>
+      <Pagination>
+        <button onClick={previousPage}>Página Anterior</button>
+        <button onClick={nextPage}>Próxima página</button>
+      </Pagination>
     </ClientesDiv>
   )
 }

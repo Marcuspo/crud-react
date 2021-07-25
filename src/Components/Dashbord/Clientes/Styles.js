@@ -51,3 +51,10 @@ export const TextCardButton = styled(TextCard)`
   box-shadow: none;
   border: none;
 `
+export const Pagination = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 15px;
+`
