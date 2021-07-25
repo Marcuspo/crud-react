@@ -36,6 +36,7 @@ export const TextCard = styled.text`
 `
 export const ButtonMore = styled.div`
   background-color: rgb(96, 59, 187);
+  justify-content: space-between;
   margin-top: 5px;
   padding: 15px 32px;
   text-align: center;
@@ -45,12 +46,14 @@ export const ButtonMore = styled.div`
 `
 export const TextCardButton = styled(TextCard)`
   display: inline-block;
+  margin: 15px;
   color: #fff;
   text-decoration: none;
   outline: none;
   box-shadow: none;
   border: none;
 `
+
 export const Pagination = styled.div`
   display: flex;
   flex-direction: row;
