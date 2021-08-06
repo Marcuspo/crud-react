@@ -27,3 +27,16 @@ export const CadastroDiv = styled.div`
     cursor: pointer;
   }
 `
+export const DivForm = styled.div`
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-top: 45px;
+  .col-md-4 {
+    width: 100%;
+  }
+
+  .button {
+    margin-top: 15px;
+  }
+`

@@ -1,7 +1,7 @@
-import React, { useState } from "react"
-import { Link, Redirect } from "react-router-dom"
+import React from "react"
+import { Link } from "react-router-dom"
 import history from "../../Routes/history"
-import Form from "./Form"
+import Forms from "./Forms"
 
 import { CadastroDiv } from "./Styles"
 
@@ -19,7 +19,7 @@ const Cadastro = () => {
           <button>Voltar</button>
         </Link>
       </nav>
-      <Form />
+      <Forms />
     </CadastroDiv>
   )
 }
